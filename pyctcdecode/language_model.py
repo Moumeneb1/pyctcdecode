@@ -40,7 +40,7 @@ def load_unigram_set_from_arpa(arpa_path: str) -> Set[str]:
     with open(arpa_path) as f:
         start_1_gram = False
         for line in f:
-            line = line.strip()
+            line = line.encode('utf-8').strip()
             if line == "\\1-grams:":
                 start_1_gram = True
             elif line == "\\2-grams:":
